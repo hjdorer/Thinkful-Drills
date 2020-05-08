@@ -1,0 +1,39 @@
+1. What was the hottest day in our data set? Where was that?
+The max temperature is 134F (seems impractical), which occurs in the zip 94063
+
+SELECT 
+	zip, MAX(maxtemperaturef)
+FROM
+	weather
+GROUP BY
+	zip
+
+------------------
+2. How many trips started at each station?
+ SELECT 
+	start_station, count(*)
+FROM
+	trips
+GROUP BY
+	start_station
+ 
+------------------
+3. What's the shortest trip that happened? 60 (units?)
+SELECT  
+	trip_id, min(duration)
+FROM
+	trips
+GROUP BY
+	trip_id, duration
+ORDER BY duration asc
+
+Note: had issues with this one, wouldn't output ONLY rows with minimum duration
+------------------
+4. What is the average trip duration, by end station?
+SELECT 
+	end_station, 
+	AVG(duration) as dur_ave
+FROM
+	trips
+GROUP BY 1;
+  
