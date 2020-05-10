@@ -1,7 +1,3 @@
-sfo_listings
-sfo_calendar
-sfo_reviews
-
 1. What's the most expensive listing? What else can you tell me about the listing?
 The most expensive listing is for listing_id 24650875, which is $10,000/night for a whole victorian house. 
 The title of the listing is "Full House Victorian: 7500 SqFt, 4 Floors, Hot Tub".
@@ -30,7 +26,6 @@ ORDER BY count(*) desc
 ------------------
 
 3. What time of year is the cheapest time to go to San Francisco? What about the busiest?
-
 The cheapest time of year to go to San Francisco is from December through February.
 
 SELECT 
@@ -40,6 +35,7 @@ FROM
 	sfo_calendar
 GROUP BY 1
 ORDER BY price asc
+
 
 The busiest time of year to go to San Francisco is mid to late September.
 SELECT 
